@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consciência Negra - Olhos D'água</title>
   <style>
-    /* Paleta de cores inspirada na afro-brasilidade */
     :root {
       --terra: #8b5e3c;
       --ouro: #d9a441;
@@ -122,6 +121,45 @@
       transform: translateY(-2px);
     }
 
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      padding: 1.5rem;
+      text-align: center;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--terra);
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+      gap: 1rem;
+    }
+
+    .carousel-controls button {
+      background: var(--ouro);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -131,7 +169,6 @@
       margin-top: 1rem;
     }
 
-    /* Responsividade */
     @media (min-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -139,6 +176,7 @@
       section h2 {
         font-size: 1.5rem;
       }
+      .carousel-item { font-size: 1.2rem; }
     }
   </style>
 </head>
@@ -179,6 +217,22 @@
     </section>
 
     <section>
+      <h2>Frases Inspiradoras</h2>
+      <div class="carousel" id="carousel">
+        <div class="carousel-track" id="track">
+          <div class="carousel-item">"A memória é a água que alimenta nossas raízes."</div>
+          <div class="carousel-item">"Resistir é afirmar nossa identidade todos os dias."</div>
+          <div class="carousel-item">"A ancestralidade vive em cada gesto e palavra."</div>
+          <div class="carousel-item">"A literatura negra é um ato de liberdade."</div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button id="prev">◀</button>
+        <button id="next">▶</button>
+      </div>
+    </section>
+
+    <section>
       <h2>Atividades Sugeridas</h2>
       <p>Algumas propostas para sala de aula ou estudo individual:</p>
       <ul>
@@ -193,5 +247,27 @@
     <p>Site educativo sobre Consciência Negra inspirado em Conceição Evaristo.</p>
     <p>Design mobile-first 📱</p>
   </footer>
+
+  <script>
+    const track = document.getElementById('track');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let index = 0;
+
+    function updateCarousel(){
+      track.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + items.length) % items.length;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % items.length;
+      updateCarousel();
+    });
+  </script>
 </body>
 </html>
