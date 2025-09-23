@@ -65,6 +65,25 @@
       border-radius: 6px;
       font-size: 0.9rem;
     }
+    .resources {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .resources a {
+      display: block;
+      background: #2d2a26;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.8rem;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    .resources a:hover {
+      background: #5c2e0f;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -73,7 +92,7 @@
       font-size: 0.8rem;
     }
 
-    /* Melhor adaptação para telas maiores */
+    /* Ajustes para tablets/desktops */
     @media (min-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -103,7 +122,7 @@
   <main>
     <section>
       <h2>Sobre o Conto</h2>
-      <p><em>Olhos D’água</em>, de Conceição Evaristo, aborda memórias, ancestralidade e a luta do povo negro, destacando a importância da identidade e resistência.</p>
+      <p><em>Olhos D’água</em>, de Conceição Evaristo, traz à tona memórias, ancestralidade e resistência do povo negro. A obra é referência para refletirmos sobre identidade, afetos e consciência social.</p>
     </section>
 
     <section>
@@ -111,6 +130,7 @@
       <div class="card">A ancestralidade como força para enfrentar desafios atuais.</div>
       <div class="card">A memória como ferramenta de resistência e preservação cultural.</div>
       <div class="card">A valorização da identidade negra como base para a consciência social.</div>
+      <div class="card">A importância da literatura afro-brasileira na formação crítica.</div>
     </section>
 
     <section>
@@ -118,12 +138,33 @@
       <div class="timeline">
         <div class="timeline-item">História da escravidão e resistência negra.</div>
         <div class="timeline-item">Movimentos de luta por igualdade no Brasil.</div>
+        <div class="timeline-item">Produção literária afro-brasileira contemporânea.</div>
         <div class="timeline-item">Conquistas recentes e desafios atuais.</div>
       </div>
+    </section>
+
+    <section>
+      <h2>Materiais e Recursos</h2>
+      <div class="resources">
+        <a href="https://drive.google.com/drive/folders/1gAX8RitHXMjGPhzkc8pIlE-6SW3MUscn?usp=sharing" target="_blank">📂 Organização do Projeto da Sala</a>
+        <a href="LIVRO - Olhos d'agua.pdf" target="_blank">📖 Acesse o Livro Completo (PDF)</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Atividades Sugeridas</h2>
+      <p>Algumas propostas para sala de aula ou estudo individual:</p>
+      <ul>
+        <li>Debate sobre como a memória influencia a identidade.</li>
+        <li>Produção de microcontos inspirados em experiências pessoais.</li>
+        <li>Criação de murais visuais representando ancestralidade.</li>
+        <li>Discussão em grupo sobre trechos marcantes da obra.</li>
+      </ul>
     </section>
   </main>
   <footer>
     <p>Site educativo sobre Consciência Negra inspirado em Conceição Evaristo.</p>
+    <p>Prioridade no design mobile-first 📱</p>
   </footer>
 </body>
 </html>
