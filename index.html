@@ -5,112 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consciência Negra - Olhos D'água</title>
   <style>
-    /* Estilos base (mobile-first) */
+    /* Paleta de cores inspirada na afro-brasilidade */
+    :root {
+      --terra: #8b5e3c;
+      --ouro: #d9a441;
+      --verde: #2e6a4f;
+      --fundo: #fdfaf5;
+      --texto: #2a2a2a;
+      --claro: #fff8f0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fefcf7;
-      color: #222;
+      background: var(--fundo);
+      color: var(--texto);
     }
+
     header {
-      background: linear-gradient(135deg, #2d2a26, #8b5e3c);
+      background: linear-gradient(135deg, var(--terra), var(--verde));
       color: #fff;
       text-align: center;
-      padding: 1.2rem;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
+
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin: 0;
     }
+
     main {
       padding: 1rem;
+      max-width: 900px;
+      margin: auto;
     }
+
     section {
       margin-bottom: 1.5rem;
-      padding: 1rem;
+      padding: 1.2rem;
       border-radius: 12px;
-      background: #fff8f0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    section h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #5c2e0f;
-    }
-    section p {
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-    .card {
-      background: #fffbf5;
-      padding: 1rem;
-      border-radius: 10px;
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
+      background: var(--claro);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       transition: transform 0.2s;
     }
+
+    section:hover {
+      transform: translateY(-3px);
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--terra);
+      border-left: 5px solid var(--ouro);
+      padding-left: 0.5rem;
+    }
+
+    section p, li {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 0.6rem 0;
+      font-size: 0.9rem;
+      border-left: 4px solid var(--verde);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
     .card:hover {
       transform: scale(1.02);
     }
+
     .timeline {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
+
     .timeline-item {
-      background: #fff3e6;
+      background: #fff;
       padding: 0.8rem;
-      border-left: 4px solid #5c2e0f;
       border-radius: 6px;
+      border-left: 5px solid var(--terra);
       font-size: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     }
+
     .resources {
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
     }
+
     .resources a {
       display: block;
-      background: #2d2a26;
+      background: var(--verde);
       color: #fff;
       text-decoration: none;
       padding: 0.8rem;
       border-radius: 8px;
       text-align: center;
-      font-size: 0.9rem;
-      transition: background 0.3s;
+      font-size: 0.95rem;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
     }
+
     .resources a:hover {
-      background: #5c2e0f;
+      background: var(--terra);
+      transform: translateY(-2px);
     }
+
     footer {
       text-align: center;
       padding: 1rem;
-      background: #2d2a26;
+      background: linear-gradient(135deg, var(--verde), var(--terra));
       color: #fff;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
+      margin-top: 1rem;
     }
 
-    /* Ajustes para tablets/desktops */
+    /* Responsividade */
     @media (min-width: 600px) {
       header h1 {
         font-size: 2rem;
       }
       section h2 {
-        font-size: 1.4rem;
-      }
-      section p {
-        font-size: 1rem;
-      }
-    }
-    @media (min-width: 900px) {
-      main {
-        max-width: 800px;
-        margin: auto;
-      }
-      section {
-        padding: 1.5rem;
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -164,7 +191,7 @@
   </main>
   <footer>
     <p>Site educativo sobre Consciência Negra inspirado em Conceição Evaristo.</p>
-    <p>Prioridade no design mobile-first 📱</p>
+    <p>Design mobile-first 📱</p>
   </footer>
 </body>
 </html>
