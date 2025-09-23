@@ -1,44 +1,129 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olhos D'água - Consciência Negra</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consciência Negra - Olhos D'água</title>
+  <style>
+    /* Estilos base (mobile-first) */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fefcf7;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg, #2d2a26, #8b5e3c);
+      color: #fff;
+      text-align: center;
+      padding: 1.2rem;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    main {
+      padding: 1rem;
+    }
+    section {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 12px;
+      background: #fff8f0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #5c2e0f;
+    }
+    section p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .card {
+      background: #fffbf5;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .timeline-item {
+      background: #fff3e6;
+      padding: 0.8rem;
+      border-left: 4px solid #5c2e0f;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2d2a26;
+      color: #fff;
+      font-size: 0.8rem;
+    }
+
+    /* Melhor adaptação para telas maiores */
+    @media (min-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section h2 {
+        font-size: 1.4rem;
+      }
+      section p {
+        font-size: 1rem;
+      }
+    }
+    @media (min-width: 900px) {
+      main {
+        max-width: 800px;
+        margin: auto;
+      }
+      section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Olhos D'água</h1>
-        <p>Um olhar sobre a força, a dor e a beleza da alma negra.</p>
-    </header>
+  <header>
+    <h1>Consciência Negra - Olhos D'água</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Sobre o Conto</h2>
+      <p><em>Olhos D’água</em>, de Conceição Evaristo, aborda memórias, ancestralidade e a luta do povo negro, destacando a importância da identidade e resistência.</p>
+    </section>
 
-    <main>
-        <section class="intro">
-            <img src="https://i.ibb.co/L5YwY1b/olhos-dagua.jpg" alt="Capa do livro Olhos D'água">
-            <h2>O Conto</h2>
-            <p>O conto "Olhos D'água", de Conceição Evaristo, é uma jornada poética e dolorosa. A narrativa mergulha na relação entre mãe e filha, revelando as camadas de uma identidade forjada na luta e na ancestralidade. Os olhos da personagem principal se tornam um espelho de sua história, da dor e da resistência.</p>
-        </section>
+    <section>
+      <h2>Reflexões</h2>
+      <div class="card">A ancestralidade como força para enfrentar desafios atuais.</div>
+      <div class="card">A memória como ferramenta de resistência e preservação cultural.</div>
+      <div class="card">A valorização da identidade negra como base para a consciência social.</div>
+    </section>
 
-        <section class="author">
-            <h2>Conceição Evaristo</h2>
-            <p>Conceição Evaristo é uma das vozes mais importantes da literatura brasileira contemporânea. Suas obras, marcadas pela "escrevivência", abordam a vivência da mulher negra no Brasil. A autora nos presenteia com a riqueza de suas histórias, revelando a força e a beleza da cultura afro-brasileira.</p>
-        </section>
-
-        <section class="gallery">
-            <h2>Galeria</h2>
-            <div class="gallery-container">
-                <img src="https://i.ibb.co/3s4Dq4q/mulher-negra.jpg" alt="Foto de mulher negra">
-                <img src="https://i.ibb.co/Q8Q7v81/olhar.jpg" alt="Foto de um olhar">
-                <img src="https://i.ibb.co/zX5M22V/mae-filha.jpg" alt="Foto de mãe e filha">
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 - Site sobre Consciência Negra</p>
-    </footer>
-    <script src="script.js"></script>
+    <section>
+      <h2>Linha do Tempo</h2>
+      <div class="timeline">
+        <div class="timeline-item">História da escravidão e resistência negra.</div>
+        <div class="timeline-item">Movimentos de luta por igualdade no Brasil.</div>
+        <div class="timeline-item">Conquistas recentes e desafios atuais.</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Site educativo sobre Consciência Negra inspirado em Conceição Evaristo.</p>
+  </footer>
 </body>
 </html>
