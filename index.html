@@ -2,13 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Olhos D'água — Consciência Negra</title>
   <meta name="description" content="Site educativo e interativo sobre o conto 'Olhos D'água' com foco em consciência negra e afro-brasilidade.">
   <style>
     /* ======================
-       Mobile-first CSS
-       Palette inspired by Afro-brasilidade: terracota, ocre, marrom, verde e dourado
+       Mobile-first CSS (foco em telas pequenas primeiro)
        ====================== */
     :root{
       --bg:#FFF8F2;
@@ -19,342 +18,156 @@
       --deep:#2A1F1E;
       --green:#2E6A4F;
       --gold:#C9A34A;
-      --glass: rgba(255,255,255,0.6);
-      --radius:14px;
-      --shadow: 0 8px 24px rgba(41,20,10,0.12);
-      --transition: 300ms cubic-bezier(.2,.9,.26,1);
+      --shadow: 0 4px 12px rgba(41,20,10,0.15);
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{box-sizing:border-box;margin:0;padding:0}
     body{
-      margin:0;
       background:linear-gradient(180deg,var(--bg), #FFF6E8 120%);
       color:var(--deep);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.45;
-      padding-bottom:80px;
+      font-size:16px;
     }
 
-    /* top bar */
     header{
-      position:sticky;top:0;z-index:40;backdrop-filter: blur(6px);
-      background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
-      border-bottom:1px solid rgba(45,30,22,0.04);
-      padding:10px 16px; display:flex;align-items:center;gap:12px;
+      position:sticky;top:0;z-index:10;
+      background:var(--card);
+      display:flex;justify-content:space-between;align-items:center;
+      padding:0.8rem 1rem;
+      box-shadow:var(--shadow);
     }
-    .brand{display:flex;align-items:center;gap:10px}
     .logo{
-      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--terracotta),var(--ocre));
-      display:grid;place-items:center;color:white;font-weight:700;font-size:18px;box-shadow:var(--shadow);
-      transform:translateZ(0);
+      background:linear-gradient(135deg,var(--terracotta),var(--ocre));
+      width:40px;height:40px;border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:bold;
     }
-    .title{font-weight:700;font-size:16px}
-    nav{margin-left:auto}
-    .hamburger{width:42px;height:42px;display:grid;place-items:center;border-radius:10px;background:var(--card);border:1px solid rgba(0,0,0,0.04)}
 
-    /* Main container */
-    main{padding:18px;max-width:1100px;margin:14px auto}
+    main{padding:1rem}
+
     .hero{
-      background:linear-gradient(180deg, rgba(178,90,60,0.06), rgba(201,163,74,0.03));
-      border-radius:18px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px
+      display:flex;flex-direction:column;gap:1rem;
+      background:var(--card);
+      border-radius:12px;padding:1rem;
+      box-shadow:var(--shadow);
+      margin-bottom:1.5rem;
     }
-    .hero-top{display:flex;gap:12px;align-items:center}
-    .hero h1{margin:0;font-size:20px;color:var(--brown)}
-    .hero p.lead{margin:0;color:var(--brown);opacity:0.9}
+    .hero h1{font-size:1.3rem;color:var(--brown)}
+    .hero p{font-size:1rem;color:var(--deep)}
 
-    /* interactive quote card */
-    .quote-card{background:linear-gradient(135deg,var(--gold), rgba(201,163,74,0.08));padding:14px;border-radius:12px}
-    .quote{font-style:italic;font-weight:600}
+    .btn,.cta{
+      padding:0.6rem 1rem;
+      border:none;border-radius:8px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .cta{background:var(--green);color:white}
+    .btn{background:var(--terracotta);color:white}
 
-    /* section grid */
-    section{margin-top:18px}
-    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .cards{display:grid;gap:1rem;margin:1rem 0}
+    .card{background:white;padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
+    .card h4{margin-bottom:0.5rem}
 
-    /* timeline */
-    .timeline{display:flex;gap:10px;overflow:auto;padding:8px}
-    .timeline-item{min-width:160px;background:var(--card);border-radius:12px;padding:12px;box-shadow:var(--shadow);flex:0 0 auto}
-    .timeline-item h4{margin:0 0 6px 0}
-    .timeline-item p{margin:0;font-size:13px;color:var(--brown);opacity:0.9}
+    .carousel{overflow:hidden;border-radius:10px;margin-top:1rem}
+    .carousel-track{display:flex;transition:transform 0.3s ease}
+    .carousel .item{min-width:100%;padding:1rem}
+    .quote-card{background:var(--ocre);color:white;padding:1rem;border-radius:10px}
 
-    /* cards: interactive analysis */
-    .cards{display:grid;grid-template-columns:1fr;gap:12px}
-    .card{background:linear-gradient(180deg, #fff, var(--card));padding:14px;border-radius:12px;box-shadow:var(--shadow);transition:transform var(--transition), box-shadow var(--transition);touch-action:pan-y}
-    .card:hover{transform:translateY(-6px) rotateX(2deg);}
-    .card .meta{font-size:12px;color:var(--deep);opacity:0.8}
+    .carousel-controls{display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem}
 
-    /* carousel for quotes */
-    .carousel{position:relative;overflow:hidden;border-radius:12px}
-    .carousel-track{display:flex;transition:transform 400ms ease}
-    .carousel .item{min-width:100%;padding:18px}
-    .carousel-controls{display:flex;gap:8px;justify-content:center;margin-top:8px}
-    .btn{padding:8px 12px;border-radius:10px;background:var(--terracotta);color:white;border:none;font-weight:600}
+    .timeline{display:flex;overflow-x:auto;gap:1rem;padding:0.5rem 0}
+    .timeline-item{flex:0 0 70%;background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
 
-    /* modal */
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,10,10,0.4);z-index:60}
-    .modal.open{display:flex}
-    .modal .panel{width:92%;max-width:720px;background:white;border-radius:12px;padding:18px}
+    aside{margin-top:1.5rem}
+    aside div{margin-bottom:1rem;padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
 
-    /* footer */
-    footer{margin-top:24px;padding:16px;text-align:center;color:var(--brown);opacity:0.9}
+    footer{text-align:center;padding:1rem;color:var(--brown);font-size:0.9rem;margin-top:2rem}
 
-    /* responsive desktop adjustments */
-    @media(min-width:760px){
+    /* Ajustes para tablets/desktops */
+    @media(min-width:768px){
       .hero{flex-direction:row;align-items:center}
-      .grid{grid-template-columns:1fr 360px}
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .timeline{padding:12px}
+      .cards{grid-template-columns:1fr 1fr}
+      .timeline-item{flex:0 0 200px}
     }
-
-    /* helper small touches */
-    .muted{font-size:13px;color:var(--deep);opacity:0.75}
-    .center{display:flex;align-items:center;justify-content:center}
-    .cta{display:inline-block;padding:8px 14px;border-radius:10px;background:var(--green);color:white;font-weight:700}
-
-    /* focus states */
-    a,button{outline:none}
-    a:focus,button:focus{box-shadow:0 0 0 3px rgba(201,163,74,0.18)}
-
   </style>
 </head>
 <body>
   <header>
-    <div class="brand">
-      <div class="logo">OA</div>
-      <div>
-        <div class="title">Olhos D'água</div>
-        <div class="muted" style="font-size:12px">Consciência Negra · Análise do conto</div>
-      </div>
-    </div>
-    <nav>
-      <button class="hamburger" id="openMenu" aria-label="Abrir menu">☰</button>
-    </nav>
+    <div class="logo">OA</div>
+    <h2 style="font-size:1rem;color:var(--brown)">Olhos D'água</h2>
   </header>
 
   <main>
     <section class="hero">
-      <div style="flex:1">
-        <h1>Olhos D'água — leitura e reflexão</h1>
-        <p class="lead">Exploração dinâmica do conto homônimo com foco em temas: memória, identidade, resistência e herança afro-brasileira.</p>
-        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-          <button class="cta" id="openAnalysis">Análise interativa</button>
-          <button class="btn" id="startCarousel">Ler trechos</button>
-        </div>
-      </div>
-      <div style="width:120px;display:flex;flex-direction:column;gap:8px;align-items:flex-end">
-        <div style="background:linear-gradient(135deg,var(--terracotta),var(--ocre));padding:10px;border-radius:12px;color:white;font-weight:700;box-shadow:var(--shadow)">Afro‑Brasil</div>
-        <div style="background:var(--card);padding:10px;border-radius:12px;color:var(--deep);font-weight:600;box-shadow:var(--shadow)">Consciência</div>
-      </div>
-    </section>
-
-    <section class="grid">
       <div>
-        <div style="margin-top:14px;display:flex;gap:10px;align-items:center;justify-content:space-between">
-          <h3 style="margin:0">Resumo & Contexto</h3>
-          <div class="muted">Interaja com os cards para aprofundar</div>
+        <h1>Olhos D'água — leitura e reflexão</h1>
+        <p>Exploração do conto homônimo com foco em memória, identidade e herança afro-brasileira.</p>
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+          <button class="cta" id="openAnalysis">Análise</button>
+          <button class="btn" id="startCarousel">Trechos</button>
         </div>
-
-        <div class="cards" id="cards">
-          <article class="card" data-topic="contexto">
-            <h4>Contexto histórico</h4>
-            <div class="meta">Período & características</div>
-            <p>O conto dialoga com a tradição oral e memórias coletivas, evidenciando a presença africana na formação social brasileira.</p>
-            <div style="margin-top:10px"><button class="btn" data-open="modal" data-modal-topic="contexto">Abrir</button></div>
-          </article>
-
-          <article class="card" data-topic="personagens">
-            <h4>Personagens</h4>
-            <div class="meta">Identidades e trajetórias</div>
-            <p>Análise das personagens e seus papéis — como o olhar e a memória moldam a narrativa.</p>
-            <div style="margin-top:10px"><button class="btn" data-open="modal" data-modal-topic="personagens">Abrir</button></div>
-          </article>
-
-          <article class="card" data-topic="temas">
-            <h4>Temas centrais</h4>
-            <div class="meta">Memória · Resistência · Identidade</div>
-            <p>O conto explora aspectos de resistência cultural e afetiva, com imagens poéticas fortemente sensoriais.</p>
-            <div style="margin-top:10px"><button class="btn" data-open="modal" data-modal-topic="temas">Abrir</button></div>
-          </article>
-
-          <article class="card" data-topic="recursos">
-            <h4>Recursos literários</h4>
-            <div class="meta">Metáforas, imagens e ritmo</div>
-            <p>Observações sobre linguagem, repetições e como a forma reforça o conteúdo.</p>
-            <div style="margin-top:10px"><button class="btn" data-open="modal" data-modal-topic="recursos">Abrir</button></div>
-          </article>
-        </div>
-
-        <div style="margin-top:14px">
-          <h3>Trechos selecionados</h3>
-          <div class="carousel" id="carousel">
-            <div class="carousel-track" id="track">
-              <div class="item">
-                <div class="quote-card">
-                  <div class="quote">"— E o que é que você trouxe? — perguntou ela. — Trouxe água nos olhos."</div>
-                  <div class="muted" style="margin-top:8px">Trecho fictício para demonstração.</div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="quote-card">
-                  <div class="quote">"As palavras vinham devagar, como quem traz histórias no corpo."</div>
-                  <div class="muted" style="margin-top:8px">Trecho fictício para demonstração.</div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="quote-card">
-                  <div class="quote">"A memória insistia em se encostar nas coisas pequenas: uma panela, um olhar."</div>
-                  <div class="muted" style="margin-top:8px">Trecho fictício para demonstração.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-controls">
-            <button class="btn" id="prev">‹</button>
-            <button class="btn" id="next">›</button>
-          </div>
-        </div>
-
-        <div style="margin-top:16px">
-          <h3>Linha do tempo — referências culturais</h3>
-          <div class="timeline" id="timeline">
-            <div class="timeline-item"><h4>Tradição oral</h4><p>Histórias transmitidas entre gerações.</p></div>
-            <div class="timeline-item"><h4>Religiosidade</h4><p>Marcas de rituais e crenças afro-brasileiras.</p></div>
-            <div class="timeline-item"><h4>Arte</h4><p>Expressões plásticas e música como herança.</p></div>
-            <div class="timeline-item"><h4>Literatura</h4><p>Autores que ecoam a mesma temática.</p></div>
-          </div>
-        </div>
-
       </div>
-
-      <aside style="padding-left:10px">
-        <div style="position:sticky;top:86px">
-          <div style="background:linear-gradient(180deg,var(--card),#fff);padding:12px;border-radius:12px;box-shadow:var(--shadow)">
-            <h4 style="margin:0">Atividades</h4>
-            <p class="muted">Sugestões para sala de aula ou estudo:</p>
-            <ul class="muted">
-              <li>Debate guiado: memória e identidade.</li>
-              <li>Produzir microcontos inspirados no tema.</li>
-              <li>Mapa afetivo: associe objetos do conto a memórias pessoais.</li>
-            </ul>
-            <div style="margin-top:8px"><button class="btn" id="downloadNotes">Baixar resumo</button></div>
-          </div>
-
-          <div style="margin-top:12px;background:linear-gradient(135deg,var(--terracotta),var(--ocre));padding:12px;border-radius:12px;color:white;box-shadow:var(--shadow)">
-            <h4 style="margin:0">Cores e símbolos</h4>
-            <p class="muted">Paleta inspirada na terra, ouro e vegetação. Ícones visuais remetem à ancestralidade.</p>
-          </div>
-        </div>
-      </aside>
-
     </section>
 
-    <!-- modal -->
-    <div class="modal" id="modal" role="dialog" aria-modal="true">
-      <div class="panel" id="modalPanel">
-        <button id="closeModal" style="float:right" aria-label="Fechar">✕</button>
-        <div id="modalContent">
-          <!-- dynamic content injected by JS -->
+    <section>
+      <h3>Resumo & Contexto</h3>
+      <div class="cards">
+        <article class="card"><h4>Contexto histórico</h4><p>Memórias coletivas e resistência cultural afro-brasileira.</p></article>
+        <article class="card"><h4>Personagens</h4><p>O olhar e a memória moldam suas trajetórias.</p></article>
+        <article class="card"><h4>Temas centrais</h4><p>Identidade, memória afetiva e resistência.</p></article>
+        <article class="card"><h4>Recursos literários</h4><p>Metáforas, ritmo e imagens sensoriais.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h3>Trechos selecionados</h3>
+      <div class="carousel" id="carousel">
+        <div class="carousel-track" id="track">
+          <div class="item"><div class="quote-card">"Trouxe água nos olhos."</div></div>
+          <div class="item"><div class="quote-card">"As palavras vinham devagar."</div></div>
+          <div class="item"><div class="quote-card">"A memória insistia em se encostar."</div></div>
         </div>
       </div>
-    </div>
+      <div class="carousel-controls">
+        <button class="btn" id="prev">‹</button>
+        <button class="btn" id="next">›</button>
+      </div>
+    </section>
+
+    <section>
+      <h3>Linha do tempo cultural</h3>
+      <div class="timeline">
+        <div class="timeline-item"><h4>Tradição oral</h4><p>Histórias entre gerações.</p></div>
+        <div class="timeline-item"><h4>Religiosidade</h4><p>Rituais afro-brasileiros.</p></div>
+        <div class="timeline-item"><h4>Arte</h4><p>Expressões musicais e visuais.</p></div>
+        <div class="timeline-item"><h4>Literatura</h4><p>Autores afro-brasileiros.</p></div>
+      </div>
+    </section>
+
+    <aside>
+      <div>
+        <h4>Atividades</h4>
+        <ul>
+          <li>Debate: memória e identidade.</li>
+          <li>Escrever microcontos.</li>
+          <li>Mapa afetivo com objetos.</li>
+        </ul>
+      </div>
+    </aside>
 
     <footer>
-      <div>Projeto educativo · Consciência Negra · Inspiração literária</div>
-      <div style="font-size:12px;margin-top:6px" class="muted">Desenvolvido como exemplo responsivo e interativo — mobile first.</div>
+      Projeto educativo · Consciência Negra · Mobile First
     </footer>
-
   </main>
 
   <script>
-    // Mobile-first interactive JS
-    (function(){
-      // simple menu (placeholder)
-      const openMenu = document.getElementById('openMenu');
-      openMenu.addEventListener('click', ()=> alert('Menu — aqui você pode adicionar links: Contexto | Trechos | Atividades'));
-
-      // Carousel
-      const track = document.getElementById('track');
-      const items = track.children;
-      let index = 0;
-      function updateCarousel(){
-        track.style.transform = `translateX(${ -index * 100 }%)`;
-      }
-      document.getElementById('prev').addEventListener('click', ()=>{ index = (index-1 + items.length) % items.length; updateCarousel(); });
-      document.getElementById('next').addEventListener('click', ()=>{ index = (index+1) % items.length; updateCarousel(); });
-      document.getElementById('startCarousel').addEventListener('click', ()=>{ index = 0; updateCarousel(); window.scrollTo({top: document.getElementById('carousel').offsetTop - 80, behavior:'smooth'}); });
-
-      // Cards open modal with topic content
-      const modal = document.getElementById('modal');
-      const modalContent = document.getElementById('modalContent');
-      const closeModal = document.getElementById('closeModal');
-      closeModal.addEventListener('click', ()=> modal.classList.remove('open'));
-      modal.addEventListener('click', (e)=>{ if(e.target === modal) modal.classList.remove('open') });
-
-      const topicTexts = {
-        'contexto': `\n<strong>Contexto histórico</strong>\n<p>O conto se ancora em referências da cultura afro-brasileira, retratando memória coletiva, hierarquias sociais e a resistência por meio das práticas cotidianas. Observe como pequenas imagens (objetos, gestos) carregam significados maiores.</p>`,
-        'personagens': `\n<strong>Personagens</strong>\n<p>Analise os papéis: nem sempre há grandes eventos, mas o interior das personagens e suas lembranças mostram trajetórias. Repare nos olhares, nos silêncios e em como a narrativa trata o passado.</p>`,
-        'temas': `\n<strong>Temas centrais</strong>\n<p>Identidade, pertença, memória afetiva e resistência. O conto usa linguagem sensorial para aproximar o leitor de experiências históricas vividas.</p>`,
-        'recursos': `\n<strong>Recursos literários</strong>\n<p>Metáforas, repetições, ritmo e imagens sensoriais. A forma contribui para o sentido: frases curtas misturadas com longas, insistência em objetos e olhares.</p>`
-      };
-
-      document.querySelectorAll('[data-open="modal"]').forEach(btn=>{
-        btn.addEventListener('click', (e)=>{
-          const topic = btn.getAttribute('data-modal-topic');
-          modalContent.innerHTML = topicTexts[topic] || '<p>Conteúdo em construção.</p>';
-          modal.classList.add('open');
-        })
-      });
-
-      // tiny tilt effect for cards (pointer-friendly)
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card=>{
-        let rect;
-        card.addEventListener('pointermove', (ev)=>{
-          rect = rect || card.getBoundingClientRect();
-          const x = (ev.clientX - rect.left) / rect.width - 0.5;
-          const y = (ev.clientY - rect.top) / rect.height - 0.5;
-          card.style.transform = `perspective(600px) rotateX(${ -y*6 }deg) rotateY(${ x*6 }deg) translateY(-6px)`;
-        });
-        card.addEventListener('pointerleave', ()=>{
-          card.style.transform = '';
-        })
-      });
-
-      // download notes (generate a small text file)
-      document.getElementById('downloadNotes').addEventListener('click', ()=>{
-        const text = `Resumo — Olhos D'água\n\nTemas: memória, identidade, resistência.\nAtividades sugeridas:\n- Debate \n- Microcontos\n- Mapa afetivo`;
-        const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a'); a.href = url; a.download = 'resumo_olhos_dagua.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-      });
-
-      // accessibility: keyboard open first card
-      document.getElementById('openAnalysis').addEventListener('click', ()=>{
-        document.querySelector('.card')?.focus();
-        alert('Abra os cards para ver análises curtas.');
-      });
-
-      // small progressive enhancement: keyboard carousel with arrows
-      document.addEventListener('keydown', (e)=>{
-        if(e.key === 'ArrowLeft') document.getElementById('prev').click();
-        if(e.key === 'ArrowRight') document.getElementById('next').click();
-        if(e.key === 'Escape') modal.classList.remove('open');
-      });
-
-      // touch swipe for carousel
-      (function enableSwipe(){
-        let startX=0, currentX=0, isDown=false;
-        const carouselEl = document.getElementById('carousel');
-        carouselEl.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; isDown=true });
-        carouselEl.addEventListener('touchmove', e=>{ if(!isDown) return; currentX = e.touches[0].clientX });
-        carouselEl.addEventListener('touchend', ()=>{
-          if(!isDown) return; isDown=false; const diff = startX - currentX; if(Math.abs(diff) > 40){ if(diff>0) document.getElementById('next').click(); else document.getElementById('prev').click(); }
-        })
-      })();
-
-    })();
+    const track=document.getElementById('track');
+    const items=track.children;let index=0;
+    function update(){track.style.transform=`translateX(${-index*100}%)`}
+    document.getElementById('prev').onclick=()=>{index=(index-1+items.length)%items.length;update()}
+    document.getElementById('next').onclick=()=>{index=(index+1)%items.length;update()}
+    document.getElementById('startCarousel').onclick=()=>{index=0;update();}
   </script>
 </body>
 </html>
