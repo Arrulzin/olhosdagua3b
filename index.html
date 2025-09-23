@@ -20,6 +20,8 @@
       padding: 0;
       background: var(--fundo);
       color: var(--texto);
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -166,13 +168,30 @@
       margin-top: 1rem;
     }
 
-    @media (min-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+    /* Extras só para desktop */
+    @media (min-width: 900px) {
+      body {
+        flex-direction: row;
       }
-      section h2 {
-        font-size: 1.4rem;
+      main {
+        max-width: 65%;
+        margin: 1rem;
       }
+      aside.desktop-only {
+        display: block;
+        max-width: 30%;
+        margin: 1rem;
+        background: #fff;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        height: fit-content;
+      }
+    }
+
+    /* Esconder barra lateral no mobile */
+    aside.desktop-only {
+      display: none;
     }
   </style>
 </head>
@@ -239,9 +258,22 @@
       </ul>
     </section>
   </main>
+
+  <aside class="desktop-only">
+    <h2>👩🏾‍🎓 Sobre a Autora</h2>
+    <p><strong>Conceição Evaristo</strong> é uma das maiores vozes da literatura afro-brasileira. Sua escrita carrega memórias, dores e resistências que dialogam com toda a comunidade negra.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Concei%C3%A7%C3%A3o_Evaristo.jpg" alt="Conceição Evaristo" style="width:100%;border-radius:10px;margin-top:0.5rem;">
+    <h2 style="margin-top:1rem;">🌍 Cultura Afro-Brasileira</h2>
+    <ul>
+      <li>Tradição oral e contação de histórias.</li>
+      <li>Religiosidade e rituais de matriz africana.</li>
+      <li>Artes visuais, música e dança.</li>
+    </ul>
+  </aside>
+
   <footer>
     <p>Site educativo sobre Consciência Negra inspirado em Conceição Evaristo.</p>
-    <p>Design mobile-first 📱</p>
+    <p>Design mobile-first 📱 + extras no desktop 💻</p>
   </footer>
 
   <script>
