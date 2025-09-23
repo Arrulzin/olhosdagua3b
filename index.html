@@ -23,7 +23,7 @@
     }
 
     header {
-      background: linear-gradient(135deg, var(--terra), var(--verde));
+      background: var(--terra);
       color: #fff;
       text-align: center;
       padding: 1.5rem 1rem;
@@ -47,19 +47,19 @@
       border-radius: 12px;
       background: var(--claro);
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s;
-    }
-
-    section:hover {
-      transform: translateY(-3px);
     }
 
     section h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
       color: var(--terra);
-      border-left: 5px solid var(--ouro);
-      padding-left: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    section h2 span.icon {
+      font-size: 1.2rem;
     }
 
     section p, li {
@@ -75,11 +75,6 @@
       font-size: 0.9rem;
       border-left: 4px solid var(--verde);
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.02);
     }
 
     .timeline {
@@ -113,12 +108,11 @@
       text-align: center;
       font-size: 0.95rem;
       font-weight: bold;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s;
     }
 
     .resources a:hover {
       background: var(--terra);
-      transform: translateY(-2px);
     }
 
     .carousel {
@@ -136,11 +130,14 @@
 
     .carousel-item {
       min-width: 100%;
-      padding: 1.5rem;
+      padding: 1.2rem;
       text-align: center;
       font-style: italic;
       font-size: 1rem;
       color: var(--terra);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .carousel-controls {
@@ -163,7 +160,7 @@
     footer {
       text-align: center;
       padding: 1rem;
-      background: linear-gradient(135deg, var(--verde), var(--terra));
+      background: var(--terra);
       color: #fff;
       font-size: 0.85rem;
       margin-top: 1rem;
@@ -174,9 +171,8 @@
         font-size: 2rem;
       }
       section h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
-      .carousel-item { font-size: 1.2rem; }
     }
   </style>
 </head>
@@ -186,12 +182,12 @@
   </header>
   <main>
     <section>
-      <h2>Sobre o Conto</h2>
+      <h2><span class="icon">📖</span> Sobre o Conto</h2>
       <p><em>Olhos D’água</em>, de Conceição Evaristo, traz à tona memórias, ancestralidade e resistência do povo negro. A obra é referência para refletirmos sobre identidade, afetos e consciência social.</p>
     </section>
 
     <section>
-      <h2>Reflexões</h2>
+      <h2><span class="icon">💡</span> Reflexões</h2>
       <div class="card">A ancestralidade como força para enfrentar desafios atuais.</div>
       <div class="card">A memória como ferramenta de resistência e preservação cultural.</div>
       <div class="card">A valorização da identidade negra como base para a consciência social.</div>
@@ -199,7 +195,7 @@
     </section>
 
     <section>
-      <h2>Linha do Tempo</h2>
+      <h2><span class="icon">⏳</span> Linha do Tempo</h2>
       <div class="timeline">
         <div class="timeline-item">História da escravidão e resistência negra.</div>
         <div class="timeline-item">Movimentos de luta por igualdade no Brasil.</div>
@@ -209,21 +205,21 @@
     </section>
 
     <section>
-      <h2>Materiais e Recursos</h2>
+      <h2><span class="icon">📂</span> Materiais e Recursos</h2>
       <div class="resources">
-        <a href="https://drive.google.com/drive/folders/1gAX8RitHXMjGPhzkc8pIlE-6SW3MUscn?usp=sharing" target="_blank">📂 Organização do Projeto da Sala</a>
-        <a href="LIVRO - Olhos d'agua.pdf" target="_blank">📖 Acesse o Livro Completo (PDF)</a>
+        <a href="https://drive.google.com/drive/folders/1gAX8RitHXMjGPhzkc8pIlE-6SW3MUscn?usp=sharing" target="_blank">Organização do Projeto da Sala</a>
+        <a href="LIVRO - Olhos d'agua.pdf" target="_blank">Acesse o Livro Completo (PDF)</a>
       </div>
     </section>
 
     <section>
-      <h2>Frases Inspiradoras</h2>
+      <h2><span class="icon">📝</span> Frases Inspiradoras</h2>
       <div class="carousel" id="carousel">
         <div class="carousel-track" id="track">
-          <div class="carousel-item">"A memória é a água que alimenta nossas raízes."</div>
-          <div class="carousel-item">"Resistir é afirmar nossa identidade todos os dias."</div>
-          <div class="carousel-item">"A ancestralidade vive em cada gesto e palavra."</div>
-          <div class="carousel-item">"A literatura negra é um ato de liberdade."</div>
+          <div class="carousel-item">“A memória é a água que alimenta nossas raízes.”</div>
+          <div class="carousel-item">“Resistir é afirmar nossa identidade todos os dias.”</div>
+          <div class="carousel-item">“A ancestralidade vive em cada gesto e palavra.”</div>
+          <div class="carousel-item">“A literatura negra é um ato de liberdade.”</div>
         </div>
       </div>
       <div class="carousel-controls">
@@ -233,7 +229,7 @@
     </section>
 
     <section>
-      <h2>Atividades Sugeridas</h2>
+      <h2><span class="icon">🎯</span> Atividades Sugeridas</h2>
       <p>Algumas propostas para sala de aula ou estudo individual:</p>
       <ul>
         <li>Debate sobre como a memória influencia a identidade.</li>
