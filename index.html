@@ -15,12 +15,7 @@
     }
 
     /* Reset e Base */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: var(--cor-fundo);
@@ -28,12 +23,7 @@
         line-height: 1.6;
         font-size: 16px;
     }
-
-    .container {
-        width: 100%;
-        padding: 0 15px;
-        margin: 0 auto;
-    }
+    .container { width: 100%; padding: 0 15px; margin: 0 auto; }
 
     /* Header - Mobile First */
     header {
@@ -45,291 +35,264 @@
         z-index: 1000;
         box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
-
     .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: flex; justify-content: space-between; align-items: center;
     }
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-        text-decoration: none;
-    }
-
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-    }
-
-    .hamburger span {
-        width: 25px;
-        height: 3px;
-        background: white;
-        margin: 3px 0;
-        transition: 0.3s;
-    }
-
+    .logo { font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none; }
+    .hamburger { display: flex; flex-direction: column; cursor: pointer; }
+    .hamburger span { width: 25px; height: 3px; background: white; margin: 3px 0; transition: 0.3s; }
     .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 60px;
-        flex-direction: column;
-        background-color: var(--cor-primaria);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        padding: 2rem 0;
-        list-style: none;
+        position: fixed; left: -100%; top: 60px; flex-direction: column;
+        background-color: var(--cor-primaria); width: 100%; text-align: center;
+        transition: 0.3s; padding: 2rem 0; list-style: none;
     }
+    .nav-menu.active { left: 0; }
+    .nav-menu li { margin: 1rem 0; }
+    .nav-menu a { color: white; font-size: 1.2rem; text-decoration: none; font-weight: 500; }
+    .nav-menu a:hover { color: var(--cor-destaque); }
 
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-menu li {
-        margin: 1rem 0;
-    }
-
-    .nav-menu a {
-        color: white;
-        font-size: 1.2rem;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    .nav-menu a:hover {
-        color: var(--cor-destaque);
-    }
-
-    /* Hero Section - Mobile First */
+    /* Hero Section */
     .hero {
         background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                     url('https://placeholder-image-service.onrender.com/image/800x600?prompt=Afro-Brazilian%20cultural%20symbols%20and%20patterns%20with%20warm%20earth%20tones&id=hero-bg');
-        background-size: cover;
-        background-position: center;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        margin-top: 60px;
-        padding: 0 10px;
+        background-size: cover; background-position: center;
+        height: 70vh; display: flex; align-items: center; justify-content: center;
+        text-align: center; color: white; margin-top: 60px; padding: 0 10px;
+        position: relative;
     }
-
-    .hero h1 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-
-    .hero p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
+    .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+    .hero p { font-size: 1rem; margin-bottom: 1.5rem; }
     .cta-button {
-        background-color: var(--cor-destaque);
-        color: white;
-        padding: 12px 25px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: transform 0.3s, background-color 0.3s;
+        background-color: var(--cor-destaque); color: white;
+        padding: 12px 25px; border: none; border-radius: 5px;
+        font-size: 1rem; cursor: pointer; transition: transform 0.3s, background-color 0.3s;
     }
-
-    .cta-button:hover {
-        transform: translateY(-2px);
-        background-color: #e67e00;
-    }
+    .cta-button:hover { transform: translateY(-2px); background-color: #e67e00; }
 
     /* Sections */
-    section {
-        padding: 60px 0;
-    }
+    section { padding: 60px 0; position: relative; }
 
-    .section-title {
-        text-align: center;
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-        color: var(--cor-primaria);
-    }
+    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; color: var(--cor-primaria); }
 
     /* Book Info */
-    .book-info {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-    }
-
+    .book-info { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
     .book-cover img {
-        width: 100%;
-        max-width: 250px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        transition: transform 0.3s;
+        width: 100%; max-width: 250px; border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.3s;
     }
-
-    .book-cover img:hover {
-        transform: scale(1.05);
-    }
-
-    .book-details {
-        text-align: center;
-        font-size: 0.95rem;
-    }
+    .book-cover img:hover { transform: scale(1.05); }
+    .book-details { text-align: center; font-size: 0.95rem; }
 
     /* Conto Section */
-    .conto-section {
-        background-color: var(--cor-secundaria);
-        color: white;
-        padding: 50px 0;
-    }
-
-    .conto-text {
-        font-style: italic;
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
+    .conto-section { background-color: var(--cor-secundaria); color: white; padding: 50px 0; }
+    .conto-text { font-style: italic; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; text-align: center; }
 
     /* Galeria */
-    .gallery {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-        transition: transform 0.3s;
-    }
-
-    .gallery-item:hover img {
-        transform: scale(1.05);
-    }
-
+    .gallery { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s; }
+    .gallery-item:hover img { transform: scale(1.05); }
     .gallery-overlay {
-        position: absolute;
-        bottom: 0;
-        background: rgba(139, 0, 0, 0.8);
-        color: white;
-        width: 100%;
-        padding: 0.8rem;
-        transform: translateY(100%);
-        transition: transform 0.3s;
-        text-align: center;
-        font-size: 0.9rem;
+        position: absolute; bottom: 0; background: rgba(139,0,0,0.8);
+        color: white; width: 100%; padding: 0.8rem;
+        transform: translateY(100%); transition: transform 0.3s; text-align: center; font-size: 0.9rem;
     }
-
-    .gallery-item:hover .gallery-overlay {
-        transform: translateY(0);
-    }
+    .gallery-item:hover .gallery-overlay { transform: translateY(0); }
 
     /* Quiz */
     .quiz-container {
-        background-color: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        max-width: 100%;
-        margin: 0 auto;
+        background-color: white; padding: 1.5rem; border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); max-width: 100%; margin: 0 auto;
     }
-
-    .quiz-question h3 {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .quiz-options {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-
+    .quiz-question h3 { font-size: 1rem; margin-bottom: 1rem; }
+    .quiz-options { display: flex; flex-direction: column; gap: 0.8rem; }
     .quiz-option {
-        padding: 0.8rem;
-        border: 2px solid var(--cor-primaria);
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        font-size: 0.95rem;
-        text-align: center;
+        padding: 0.8rem; border: 2px solid var(--cor-primaria);
+        border-radius: 5px; cursor: pointer; transition: background-color 0.3s;
+        font-size: 0.95rem; text-align: center;
     }
-
-    .quiz-option:hover {
-        background-color: var(--cor-fundo);
-    }
+    .quiz-option:hover { background-color: var(--cor-fundo); }
 
     /* Footer */
-    footer {
-        background-color: var(--cor-primaria);
-        color: white;
-        padding: 2rem 0;
-        text-align: center;
-    }
+    footer { background-color: var(--cor-primaria); color: white; padding: 2rem 0; text-align: center; }
+    .social-links { display: flex; justify-content: center; gap: 0.8rem; margin-top: 0.5rem; }
+    .social-links a { color: white; font-size: 1.5rem; transition: color 0.3s; }
+    .social-links a:hover { color: var(--cor-destaque); }
 
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 0.8rem;
-        margin-top: 0.5rem;
-    }
+    /* Animações */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeIn 1s ease-in-out; }
 
-    .social-links a {
-        color: white;
-        font-size: 1.5rem;
-        transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-        color: var(--cor-destaque);
-    }
-
-    /* Media Queries - telas maiores */
+    /* Desktop Enhancements */
     @media(min-width: 768px){
         .hero h1 { font-size: 3rem; }
         .hero p { font-size: 1.2rem; }
-
         .section-title { font-size: 2.2rem; }
-
         .book-info { flex-direction: row; gap: 2rem; text-align: left; }
-
         .gallery { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media(min-width: 1024px){
         .container { max-width: 1200px; }
-        .gallery { grid-template-columns: repeat(3, 1fr); }
-    }
+        .gallery { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 
-    /* Animações */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+        /* Hero decorativo */
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://placeholder-image-service.onrender.com/image/1200x800?prompt=abstract%20afro-brazilian%20patterns') no-repeat center/cover;
+            opacity: 0.1; z-index: 0;
+        }
+        .hero-content { position: relative; z-index: 1; }
 
-    .fade-in {
-        animation: fadeIn 1s ease-in-out;
-    }
+        /* Galeria hover mais sofisticado */
+        .gallery-item:hover .gallery-overlay {
+            background: rgba(139,0,0,0.9);
+            transform: translateY(0) scale(1.05);
+        }
 
+        /* Seções com decorativos laterais */
+        section::before {
+            content: ''; position: absolute; width: 50px; height: 50px;
+            background: var(--cor-destaque); border-radius: 50%; opacity: 0.2;
+        }
+        section:nth-child(odd)::before { left: 10px; top: 20px; }
+        section:nth-child(even)::before { right: 10px; top: 50px; }
+    }
 </style>
 </head>
 <body>
-<!-- HTML permanece praticamente igual -->
-<!-- ...restante do HTML original permanece ... -->
+<header>
+    <div class="container nav-container">
+        <a href="#" class="logo">Olhos D'água</a>
+        <div class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#conto">Conto</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content fade-in">
+        <h1>Olhos D'água</h1>
+        <p>Uma jornada pela consciência negra através da literatura de Conceição Evaristo</p>
+        <button class="cta-button" onclick="scrollToSection('sobre')">Explorar</button>
+    </div>
+</section>
+
+<section id="sobre" class="container">
+    <h2 class="section-title">Sobre o Livro</h2>
+    <div class="book-info">
+        <div class="book-cover">
+            <img src="https://placeholder-image-service.onrender.com/image/300x400?prompt=Book%20cover%20of%20Olhos%20D'agua%20by%20Conceicao%20Evaristo%20with%20African%20Brazilian%20artistic%20elements&id=book-cover" alt="Capa do livro">
+        </div>
+        <div class="book-details">
+            <p>"Olhos D'água" é uma obra fundamental da literatura afro-brasileira, escrita por Conceição Evaristo. A coletânea de contos aborda temas como identidade, resistência e a experiência negra no Brasil contemporâneo.</p>
+            <p>O conto que dá nome ao livro é uma poderosa reflexão sobre a ancestralidade e a conexão com as raízes africanas.</p>
+        </div>
+    </div>
+</section>
+
+<section id="conto" class="conto-section">
+    <h2 class="section-title">O Conto Olhos D'água</h2>
+    <div class="conto-content">
+        <p class="conto-text">"Os olhos d'água são a memória viva de nossa ancestralidade. Cada lágrima derramada carrega consigo histórias de resistência, de luta e de esperança."</p>
+        <p>O conto explora profundamente a relação entre passado e presente, mostrando como as memórias ancestrais continuam vivas na experiência contemporânea do povo negro.</p>
+    </div>
+</section>
+
+<section id="galeria" class="container">
+    <h2 class="section-title">Galeria Cultural</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://placeholder-image-service.onrender.com/image/300x250?prompt=African%20Brazilian%20cultural%20symbols%20and%20traditional%20art&id=gallery-1" alt="Arte Ancestral">
+            <div class="gallery-overlay"><h3>Arte Ancestral</h3><p>Expressões artísticas que preservam a memória africana</p></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://placeholder-image-service.onrender.com/image/300x250?prompt=Traditional%20African%20Brazilian%20dance%20and%20music%20performance&id=gallery-2" alt="Dança e Música">
+            <div class="gallery-overlay"><h3>Dança e Música</h3><p>Manifestações culturais que resistem ao tempo</p></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://placeholder-image-service.onrender.com/image/300x250?prompt=African%20Brazilian%20literature%20and%20poetry%20celebration&id=gallery-3" alt="Literatura Negra">
+            <div class="gallery-overlay"><h3>Literatura Negra</h3><p>Vozes que ecoam a resistência através das palavras</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="quiz" class="container">
+    <h2 class="section-title">Quiz Interativo</h2>
+    <div class="quiz-container">
+        <div class="quiz-question"><h3>Qual é o tema central do conto "Olhos D'água"?</h3></div>
+        <div class="quiz-options">
+            <div class="quiz-option" onclick="checkAnswer(this, 'correta')">A ancestralidade e memória africana</div>
+            <div class="quiz-option" onclick="checkAnswer(this, 'errada')">O amor romântico</div>
+            <div class="quiz-option" onclick="checkAnswer(this, 'errada')">A tecnologia moderna</div>
+            <div class="quiz-option" onclick="checkAnswer(this, 'errada')">A natureza brasileira</div>
+        </div>
+    </div>
+</section>
+
+<footer id="contato">
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <h3>Olhos D'água - Consciência Negra</h3>
+                <p>Um projeto dedicado à valorização da literatura afro-brasileira</p>
+            </div>
+            <div>
+                <h4>Conecte-se conosco</h4>
+                <div class="social-links">
+                    <a href="#">📱</a>
+                    <a href="#">📷</a>
+                    <a href="#">👥</a>
+                    <a href="#">📧</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <script>
-    // JS também mantém igual
-</script>
-</body>
-</html>
+    // Menu Hamburguer
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Scroll suave
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Quiz Interativo
+    function checkAnswer(element, tipo) {
+        const options = document.querySelectorAll('.quiz-option');
+        options.forEach(opt => { opt.style.backgroundColor = ''; opt.style.color = ''; });
+
+        if (tipo === 'correta') {
+            element.style.backgroundColor = '#4CAF50';
+            element.style.color = 'white';
+            setTimeout(() => alert('Resposta correta! 🎉 O conto explora profundamente a ancestralidade africana.'), 500);
+        } else {
+            element.style.backgroundColor = '#f44336';
+            element.style.color = 'white';
+            setTimeout(() => alert('Tente novamente! 💡 Pense na relação com as raízes africanas.'), 500);
+        }
+    }
+
+    // Animação de entrada
+    const observer
