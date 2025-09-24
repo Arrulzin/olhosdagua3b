@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olhos D'água - Consciência Negra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./img/livro.jpg">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Olhos D'água</a>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#conto">Conto</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Olhos D'água</h1>
+            <p>Uma jornada pela consciência negra através da literatura de Conceição Evaristo</p>
+            <button class="cta-button" onclick="scrollToSection('sobre')">Explorar</button>
+        </div>
+    </section>
+
+    <section id="sobre" class="container">
+        <h2 class="section-title">Sobre o Livro</h2>
+        <div class="book-info">
+            <div class="book-cover">
+                <img src="./img/livro.jpg" alt="Capa do livro">
+            </div>
+            <div class="book-details">
+                <p>"Olhos D'água" é uma obra fundamental da literatura afro-brasileira, escrita por Conceição Evaristo.
+                    A coletânea de contos aborda temas como identidade, resistência e a experiência negra no Brasil
+                    contemporâneo.</p>
+                <p>O conto que dá nome ao livro é uma poderosa reflexão sobre a ancestralidade e a conexão com as raízes
+                    africanas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="conto" class="conto-section">
+        <h2 class="section-title">O Conto Olhos D'água</h2>
+        <div class="conto-content">
+            <p class="conto-text">"Os olhos d'água são a memória viva de nossa ancestralidade. Cada lágrima derramada
+                carrega consigo histórias de resistência, de luta e de esperança."</p>
+            <p>O conto explora profundamente a relação entre passado e presente, mostrando como as memórias ancestrais
+                continuam vivas na experiência contemporânea do povo negro.</p>
+        </div>
+    </section>
+
+    <section id="galeria" class="container">
+        <h2 class="section-title">Galeria Cultural</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./img/quadro.jpg" alt="Arte Ancestral">
+                <div class="gallery-overlay">
+                    <h3>Arte Ancestral</h3>
+                    <p>Expressões artísticas que preservam a memória africana</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img/danca.png" alt="Dança e Música">
+                <div class="gallery-overlay">
+                    <h3>Dança e Música</h3>
+                    <p>Manifestações culturais que resistem ao tempo</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img/conceicao.webp" alt="Literatura Negra">
+                <div class="gallery-overlay">
+                    <h3>Literatura Negra</h3>
+                    <p>Vozes que ecoam a resistência através das palavras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="container">
+        <h2 class="section-title">Quiz Interativo</h2>
+        <div class="quiz-container">
+            <div class="quiz-question">
+                <h3>Qual é o tema central do conto "Olhos D'água"?</h3>
+            </div>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="checkAnswer(this, 'correta')">A ancestralidade e memória africana
+                </div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'errada')">O amor romântico</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'errada')">A tecnologia moderna</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'errada')">A natureza brasileira</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Olhos D'água - Consciência Negra</h3>
+                    <p>Um projeto dedicado à valorização da literatura afro-brasileira</p>
+                    <div class="project-link">
+                        <a href="https://drive.google.com/drive/folders/1gAX8RitHXMjGPhzkc8pIlE-6SW3MUscn"
+                            target="_blank">Ver organização do projeto da Consciência Negra</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Conecte-se conosco</h4>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📷</a>
+                        <a href="#">👥</a>
+                        <a href="#">📧</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
